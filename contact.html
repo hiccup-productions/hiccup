@@ -5,39 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="site.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>hiccup | contact</title>
 </head>
-<body>
+
+<body class="contact">
+
     <header>
         <aside>
-            <h1>contact us</h1>
+            <h1>Contact Us</h1>
         </aside>
         <nav>
             <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="2025.html">Shows</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <article>
-        <p>Contact us at ona.creative.ventures@gmail.com</p>
-    </article>
+
+    <main>
+        <div class="form-container">
+            <h2>Get in Touch</h2>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <form action="https://yourlist.us1.list-manage.com/subscribe/post?u=xxxxxxx&amp;id=yyyyyy" method="post" target="_blank" novalidate>
+                <label for="mce-EMAIL">Email Address</label>
+                <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="you@example.com" required>
+
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </main>
+
     <footer>
-        <nav>
-          <ul style="font-family: 'Montserrat'; color: white">
-            <li>home</li>
-            <li>about</li>
-            <li>contact</li>
-          </ul>
-        </nav>
         <p style="text-align: center; font-size: small; color: white;">
           Copyright 2025 hiccup productions
         </p>
-      </footer>
+    </footer>
+
 </body>
 </html>

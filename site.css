@@ -2,6 +2,21 @@
     margin: 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+}
+
+main {
+  flex: 1;    
+}
+
 p {
     color: black;
     font-family: 'Montserrat';
@@ -25,6 +40,12 @@ footer {
   justify-content: center;
   background: #4d4b4b;
   padding-top:18px;
+}
+
+footer p {
+    text-align: center;
+    font-size: small;
+    color: white;
 }
 
 nav a:visited,
@@ -61,23 +82,79 @@ article {
     width: 100%;
 }
 
+.full-width-image {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 20px auto 0;
+  border: 3px solid #000;
+  border-radius: 5px;
+}
+
+.two-column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem; /* spacing between text and image */
+    max-width: 1000px; /* optional: keeps layout neat */
+    margin: 2rem auto; /* center horizontally */
+    padding: 0 1rem;   /* add horizontal breathing room */
+}
+
+.content-left {
+  flex: 2; /*makes the container flexible */
+  min-width: 300px;
+}
+
+.content-left h2 {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.content-right {
+  flex: 1; /*makes the container flexible */
+  display: flex;
+  flex-direction: column; /*stacks images vertically*/
+  gap: 1rem; /*space between images */
+  justify-content: flex-end; /* aligns image to the right */
+}
+
+.content-right img {
+    width: 100%; /* make the image take up the full width of its container */
+    max-width: 100%; /* prevents img from growing too large */
+    height: auto; /*maintains aspect ratio */
+    object-fit: contain; /*ensures image maintains its original ratio*/
+    flex-shrink: 0;
+    margin-left: 0;
+}
 
 /* Cards */
 
 .cards {
     list-style-type: none;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
     align-items:unset;
     justify-content: center;
+    gap: 1.5rem;
     margin: 2em;
+    padding: 0;
   }
   .card {
-    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column; /*stack child elements vertically */
+    justify-content: space-between;
+    flex: 0 0 200px; /* card width stays the same */
     border: 1px solid #ccc;
     margin: 10px;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    padding: 1rem;
+    min-height: 300px; /*optional: to give enough space for layout */
   } 
+
   .card img {
     max-height: 60%;
     max-width: 75%;
@@ -85,24 +162,26 @@ article {
   }
   
   .card h3 {
-    margin:0;
+    margin: 0;
     font-size: 18px;
     text-align: center;
   }
   
   .card .text {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     font-size: 15px;
   }
 
   .card .text a {
+    margin-top: auto;
+    align-self: center;
     background:grey;
     color: white;
     font-size: 13px;
     text-decoration: none;
-    padding: 8px 12px 8px 12px;
-    margin: 25%;
+    padding: 8px 12px;
+    margin: 35%;
     border-radius: 3px;
   }
 
@@ -110,9 +189,9 @@ article {
 
   .media-card {
     list-style-type: none;
-    display:flex;
-    max-width:75%;
-    align-items:center;
+    display: flex;
+    max-width: 75%;
+    align-items: center;
     flex: 20%;
     border: 1px solid #ccc;
     margin: 10px;
@@ -134,103 +213,194 @@ article {
 
   .media img {
     max-width: 100%;
-    max-height: 100%;
-    padding:0;
-    margin:10;
+    height: auto; /* better aspect ratio*/
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
   }
 
   .media text {
-    font-size:1em;
+    font-size: 1em;
   }
 
-/* PopTakes Object */
+/* Workshop Object */
 
-.poptakes-card {
-  list-style-type: none;
-  display:flex;
-  max-width:90%;
-  align-items:center;
-  flex: 20%;
-  border: 1px solid #ccc;
-  margin: 30px auto;
-  box-shadow:1px 1px 3px 0px rgba(0,0,0,0.3);
+.workshop-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 30vh; /* Makes sure it's centered within the full viewport height */
+    padding: 20px;
+    margin-top: 40px;
 }
 
-.poptakes {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex: 0 0 25%;
-  border: 1px solid #ccc;
-  margin: 10px;
-  box-shadow: 2px 2px 4px 0px  rgba(0,0,0,0.3);
+.media-card {
+    width: 90%; /* Adjust to your desired card width */
+    max-width: 700px; /* Limit the card's max width */
+    border: 2px solid #ccc; /* Add a border for a "card" look */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+    padding: 20px;
+    background-color: #fff; /* Card background color */
 }
 
-.poptakes img {
-  max-height: 50vh;
-  padding:0;
-  margin:10;
+.media-card .media img {
+    width: 100%; /* Make the image responsive to card size */
+    border-radius: 8px; /* Optional: rounded image corners */
 }
 
-.poptakes-intro {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: row;
-  max-height: 100vh;
-}
-.poptakes-intro img {
-  margin: 10px;
-  border: 1px solid #000;
-  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
-  max-height: 30vh;
-  cursor:pointer;
+.media-card .text {
+    padding-top: 15px;
 }
 
-.poptakes-intro img:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.media-card .text p {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    line-height: 1.4;
 }
 
-/* Stories */
-
-  .story {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1em;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  margin: 10px;
-  align-content: center;
-  justify-content: center;
-  }
-
-.story img {
-  max-width: 45vw;
-  max-height: 50vh;
-  padding:0;
-  margin:10;
+.media-card .text h3 {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    line-height: 1.4;
 }
 
-.story text {
-  font-family: 'Montserrat';
+.media-card .text a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.media-card .text a:hover {
+    text-decoration: underline;
+}
+
+.workshop-list {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1em;
-  text-align: center;
+  color: black;
+  padding: 0 1em;
+  margin: 1em auto;
+  list-style-type: disc; /* or 'none' if you want no bullets */
+  max-width: 700px; /* Optional: match width of other content cards */
 }
 
-.story a {
-  background:grey;
-  border: 0;
-  color: white;
-  font-size: 13px;
-  font-family: 'Montserrat';
-  text-decoration: none;
-  padding: 8px 12px 8px 12px;
-  border-radius: 3px;
+.workshop-list li {
+  margin-bottom: 0.5em; /* Add spacing between items */
+  line-height: 1.5;     /* Improve readability */
 }
 
-.story a:hover {
-  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
+/*About Page*/
+
+.social-media {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 1rem; /* Adds space between the buttons */
+    margin-top: 40px; /* Adds space above the buttons */
 }
 
+.social-button {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 50px; /* Circular buttons */
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: scale(1.1); /* Slightly enlarges the buttons when hovered */
+}
+
+/* Specific colors for each social media button */
+.instagram {
+    background-color: #C13584; /* Instagram purple */
+}
+
+.shoppingcart {
+    background-color: #3b5998; /* Facebook blue */
+}
+
+.bluesky {
+    background-color: #1DA1F2; /* Twitter blue */
+}
+
+/*Contact Page*/
+
+/* Contact Page Styles */
+body.contact main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;    
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+.form-container {
+    margin-bottom: 40px;
+    padding: 30px; /*padding inside the form container*/
+    box-sizing: border-box; /*ensures padding is included in the elements total width*/
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+input, textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure width includes padding */
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 12px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Footer (specific to the contact page) */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+footer p {
+    margin: 0;
+}
