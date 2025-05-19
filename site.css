@@ -404,3 +404,24 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* Style for the sale banner */
+.sale-banner {
+    background-color: rgb(251, 168, 43); /* Yellow background */
+    color: black; /* Black text */
+    text-align: center; /* Centered text */
+    padding: 0 0; /* Thin padding */
+    font-size: 16px; /* Slightly smaller font */
+    font-weight: bold; /* Bold text */
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensures it stays on top of other elements */
+}
+
+/* Basic header styles */
+header {
+    text-align: center;
+    margin-top: 20px; /* Adds space below the banner */
+}
