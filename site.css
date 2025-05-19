@@ -32,6 +32,14 @@ header {
     align-items: center;
     flex-flow: row wrap;
     flex-direction:column;
+    box-sizing:border-box;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
 }
 
 footer {
@@ -154,6 +162,12 @@ article {
     padding: 1rem;
     min-height: 300px; /*optional: to give enough space for layout */
   } 
+
+  @media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /*Cards will take up full width on smaller screens */
+    }
+  }
 
   .card img {
     max-height: 60%;
