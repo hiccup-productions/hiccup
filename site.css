@@ -19,7 +19,7 @@ main {
 
 p {
     color: black;
-    font-family: 'Montserrat';
+    font-family: 'Arial';
     padding:15px;
     margin:0px;
     font-size: 1em;
@@ -38,6 +38,10 @@ header {
 
 h1 {
     color: gold; /* Sets the text color to gold */
+}
+
+ul, li {
+    font-family: 'Arial', sans-serif; /* Apply Arial font to unordered lists and list items */
 }
 
 
