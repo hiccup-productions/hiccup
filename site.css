@@ -27,7 +27,7 @@ p {
 
 header {
     display:flex;
-    background: #4d4b4b;
+    background: #000000;
     padding-top:18px;
     align-items: center;
     flex-flow: row wrap;
@@ -35,6 +35,11 @@ header {
     box-sizing:border-box;
     width: 100%;
 }
+
+h1 {
+    color: gold; /* Sets the text color to gold */
+}
+
 
 @media (max-width: 768px) {
     header {
@@ -417,21 +422,6 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-/* Style for the sale banner */
-.sale-banner {
-    background-color: rgb(251, 168, 43); /* Yellow background */
-    color: black; /* Black text */
-    text-align: center; /* Centered text */
-    padding: 0 0; /* Thin padding */
-    font-size: 16px; /* Slightly smaller font */
-    font-weight: bold; /* Bold text */
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-    top: 0;
-    width: 100%; /* Full width */
-    z-index: 10; /* Ensures it stays on top of other elements */
 }
 
 /* Basic header styles */
